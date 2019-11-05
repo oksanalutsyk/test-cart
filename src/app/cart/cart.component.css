@@ -1,0 +1,12 @@
+.thead {
+  font-size: 20px;
+}
+.totalTr {
+  display: flex;
+  font-size: 25px;
+  font-weight: 400;
+}
+.prodCount {
+  width: 41px;
+  text-align: center;
+}

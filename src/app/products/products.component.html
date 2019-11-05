@@ -1,0 +1,22 @@
+<table class="table">
+    <thead [ngClass]="{'thead': true}">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Lable</th>
+            <th scope="col">Price</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of adminProducts; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.lable}}</td>
+            <td>{{item.price}} $</td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="onAddCart(item)">Add to card</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

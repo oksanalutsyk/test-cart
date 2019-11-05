@@ -1,0 +1,40 @@
+<table class="table">
+  <thead [ngClass]="{ thead: true }">
+    <th>Product</th>
+    <th>Price</th>
+    <th>Amount</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let view of productAddToCart; let i = index">
+      <td>{{ view.name }}</td>
+      <td>{{ view.price }} $</td>
+      <td>
+        <div>
+          <input type="text" [ngClass]="{ prodCount: true }" [(ngModel)]="view.quantity">
+        </div>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" (click)="deleteProduct(i)">
+          Delete
+        </button>
+      </td>
+    </tr>
+    <div [ngClass]="{ totalTr: true }">
+      Total:
+      <p>{{ this.total }}$</p>
+    </div>
+
+    <div style="display: flex">
+      <button
+        type="button"
+        class="btn btn-success"
+        (click)="deleteCart()"
+        routerLinkActive="active"
+        routerLink="/emptyCart"
+      >
+        MAKE AN ORDER
+      </button>
+    </div>
+  </tbody>
+</table>
